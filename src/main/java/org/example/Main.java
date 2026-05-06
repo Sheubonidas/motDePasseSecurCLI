@@ -29,14 +29,16 @@ public class Main {
         System.out.print("Combien de mots de passe générer ? (Mode Rafale) : ");
         int quantite = scanner.nextInt();
 
-        System.out.println("\n RÉSULTATS");
+        System.out.println("\nRÉSULTATS AVEC VALIDATION DOCKER");
+
+        DockerValidator validator = new DockerValidator();
 
         for (int i = 0; i < quantite; i++) {
+
             String mdp = gen.generate(longueur, majuscule, chiffres, symboles);
-
-            System.out.println((i + 1) + "." + mdp);
+            String scoreLabel = validator.validateScore(mdp);
+            System.out.println((i + 1) + ". " + mdp + " | Force : " + scoreLabel);
         }
-
         System.out.println("\n Merci d'avoir utilisé l'outil de sécurité !");
         scanner.close();
     }
