@@ -6,22 +6,18 @@ import java.util.Collections;
 import java.util.List;
 
     public class mdpGenerateur {
-
         // Définition des types de caractères
         private static final String LOWER = "abcdefghijklmnopqrstuvwxyz";
         private static final String UPPER = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         private static final String DIGITS = "0123456789";
         private static final String SYMBOLS = "!@#$%^&*()-_=+[]{}";
-
         private final SecureRandom random = new SecureRandom();
-
         /**
          * Génère un mot de passe robuste selon les paramètres choisis.
          */
         public String generate(int length, boolean includeUpper, boolean includeDigits, boolean includeSymbols) {
             StringBuilder characterPool = new StringBuilder(LOWER);
             List<Character> passwordChars = new ArrayList<>();
-
             // On s'assure d'avoir au moins un caractère de chaque type demandé
             if (includeUpper) {
                 characterPool.append(UPPER);
@@ -40,15 +36,12 @@ import java.util.List;
             for (int i = passwordChars.size(); i < length; i++) {
                 passwordChars.add(characterPool.charAt(random.nextInt(characterPool.length())));
             }
-
-            // On mélange pour que les premiers caractères ne soient pas prévisibles
+            //Le mélange pour que les premiers caractères ne soient pas prévisibles
             Collections.shuffle(passwordChars);
-
             StringBuilder finalPassword = new StringBuilder();
             for (char c : passwordChars) {
                 finalPassword.append(c);
             }
-
             return finalPassword.toString();
         }
     }

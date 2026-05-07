@@ -17,7 +17,6 @@ import java.net.http.HttpResponse;
                         .build();
 
                 HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
-
                 // On analyse la réponse JSON du conteneur
                 JsonObject json = JsonParser.parseString(response.body()).getAsJsonObject();
                 int score = json.get("score").getAsInt();
