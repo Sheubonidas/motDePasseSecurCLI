@@ -1,6 +1,6 @@
 # Générateur de Mot de Passe Sécurisé - CLI & Docker
 
-Projet réalisé par **Claude Nouhou** (Licence 3 RGL - Pigier CI).
+Projet réalisé par **Claude Nouhou** ( RGL3B ).
 
 ## Description
 Une application Java 21 permettant de générer des mots de passe robustes. La force du mot de passe est validée par un microservice Docker utilisant l'algorithme `zxcvbn`.
