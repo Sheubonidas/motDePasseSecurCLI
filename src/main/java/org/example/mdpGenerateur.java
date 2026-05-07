@@ -12,9 +12,9 @@ import java.util.List;
         private static final String DIGITS = "0123456789";
         private static final String SYMBOLS = "!@#$%^&*()-_=+[]{}";
         private final SecureRandom random = new SecureRandom();
-        /**
-         * Génère un mot de passe robuste selon les paramètres choisis.
-         */
+
+         // Génère un mot de passe robuste selon les paramètres choisis.
+
         public String generate(int length, boolean includeUpper, boolean includeDigits, boolean includeSymbols) {
             StringBuilder characterPool = new StringBuilder(LOWER);
             List<Character> passwordChars = new ArrayList<>();
